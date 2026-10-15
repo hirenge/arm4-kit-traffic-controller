@@ -48,14 +48,15 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/Src/software_timer.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/Src/led_7_seg.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/led_7seg/led_7_seg.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/software_timer/software_timer.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/Inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/led_7seg
+    ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/software_timer
 
 )
 

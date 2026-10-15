@@ -43,13 +43,18 @@ There are **no onboard traffic-light LEDs** beyond the 3 corner LEDs (`led_On/Of
 
 ```
 App/
-  Inc/app.h          – Public init + run API
-  Src/app.c          – Application logic (USER code here)
-Bsp/
-  Inc/led_7_seg.h    – 7-seg API
-  Inc/software_timer.h
-  Src/led_7_seg.c    – SPI-based 4-digit display driver
-  Src/software_timer.c – TIM2-based software timer
+  Inc/app.h          – Public init + run API (to be created in Phase 1)
+  Src/app.c          – Application logic (to be created in Phase 1)
+Bsp/                 – Board Support Package, one sub-folder per component
+  led_7seg/
+    led_7_seg.c      – SPI-based 4-digit display driver
+    led_7_seg.h      – 7-seg API
+  software_timer/
+    software_timer.c – TIM2-based software timer
+    software_timer.h
+  button/            – (planned) button debounce driver
+    button.c
+    button.h
 Core/
   Inc/main.h         – GPIO pin aliases, Error_Handler()
   Src/main.c         – HAL init → app_init() → while(app_run())
@@ -67,6 +72,16 @@ cmake/stm32cubemx/CMakeLists.txt – CubeMX-managed (minimize edits)
 ```
 
 **Rule**: Only edit files inside `App/`, `Bsp/`, and the `/* USER CODE */` sections of `Core/`. Never modify `Drivers/` or CubeMX-generated boilerplate outside those guards.
+
+**Adding a new BSP component** (e.g. `button`):
+1. Create `Bsp/button/button.c` and `Bsp/button/button.h`
+2. Add to `CMakeLists.txt`:
+   ```cmake
+   # in target_sources:
+   ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/button/button.c
+   # in target_include_directories:
+   ${CMAKE_CURRENT_SOURCE_DIR}/Bsp/button
+   ```
 
 ---
 
