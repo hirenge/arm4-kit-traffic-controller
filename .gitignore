@@ -1,0 +1,42 @@
+# ─── Build artifacts ────────────────────────────────────────────────
+build/
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# ─── CMake generated ─────────────────────────────────────────────────
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.ninja
+.ninja_deps
+.ninja_log
+
+# ─── Object / dependency files ───────────────────────────────────────
+*.o
+*.obj
+*.d
+
+# ─── IDE / tooling ───────────────────────────────────────────────────
+# VS Code
+.vscode/
+*.code-workspace
+
+# STM32CubeIDE
+.cproject
+.project
+.settings/
+Debug/
+Release/
+
+# JetBrains CLion
+.idea/
+cmake-build-*/
+
+# ─── OS noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
