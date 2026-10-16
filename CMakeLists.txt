@@ -48,7 +48,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/app.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/background.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/traffic_ui.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/vehicle_sim.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Core/Src/software_timer.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/BKIT-Arm4/lcd/lcd.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/BKIT-Arm4/led_7seg/led_7_seg.c
