@@ -21,6 +21,7 @@
 #include "spi.h"
 #include "tim.h"
 #include "gpio.h"
+#include "fsmc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -90,6 +91,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_SPI1_Init();
+  MX_FSMC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
